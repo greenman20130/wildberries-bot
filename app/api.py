@@ -66,7 +66,7 @@ async def fetch_and_store_product(artikul: str):
             session.add(new_product)
             await session.commit() 
 
-@app.get("/api/v1/products/{artikul}", response_model=ProductResponse)
+@app.post("/api/v1/products/", response_model=ProductResponse)
 async def get_product(artikul: str, token: str = Query(...), db: AsyncSession = Depends(get_db)):
     logger.info(f"Получен запрос на товар с артикулом: {artikul}")
     try:
@@ -98,7 +98,7 @@ async def get_product(artikul: str, token: str = Query(...), db: AsyncSession = 
                 name=product_data['name'],
                 artikul=artikul,
                 price=product_data['salePriceU'] / 100,
-                rating=product_data['rating'],
+                rating=product_data['supplierRating'],
                 total_quantity=product_data['totalQuantity']
             )
             
