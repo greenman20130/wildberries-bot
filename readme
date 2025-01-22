@@ -7,8 +7,8 @@
 1. Клонируйте репозиторий:
 
    ```
-   git clone https://github.com/greenman20130/testwork-bot.git
-   cd testwork-bot
+   git clone https://github.com/greenman20130/wildberries-bot.git
+   cd wildberries-bot-main
    ```
 
 2. Убедитесь, что у вас установлен Docker и Docker Compose.
